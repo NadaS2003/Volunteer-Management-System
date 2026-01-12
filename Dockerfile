@@ -30,5 +30,6 @@ RUN composer install --no-dev --optimize-autoloader
 # فتح البورت
 EXPOSE 80
 
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 # تشغيل Apache
 CMD ["apache2-foreground"]
