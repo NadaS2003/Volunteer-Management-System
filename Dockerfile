@@ -27,9 +27,13 @@ RUN chown -R www-data:www-data /var/www/html \
 # تثبيت dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# تشغيل Migrations + Seeder
+RUN php artisan migrate --force --seed
+
 # فتح البورت
 EXPOSE 80
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # تشغيل Apache
 CMD ["apache2-foreground"]
