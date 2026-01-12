@@ -26,8 +26,8 @@ return [
     |
     */
 
-    'private_key' => file_get_contents(storage_path('oauth-private.key')),
-    'public_key' => file_get_contents(storage_path('oauth-public.key')),
+    'private_key' => env('PASSPORT_PRIVATE_KEY'),
+    'public_key'  => env('PASSPORT_PUBLIC_KEY'),
 
     /*
     |--------------------------------------------------------------------------
