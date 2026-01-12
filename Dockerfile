@@ -27,8 +27,6 @@ RUN chown -R www-data:www-data /var/www/html \
 # تثبيت dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# تشغيل Migrations + Seeder
-RUN php artisan migrate --force --seed
 
 # فتح البورت
 EXPOSE 80
