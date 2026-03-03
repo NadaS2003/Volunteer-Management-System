@@ -68,26 +68,30 @@
                 password: document.querySelector('[name=password]').value
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.token) {
-                    localStorage.setItem('token', data.token);
-                    resultDiv.className = 'mt-3 text-center text-success';
-                    resultDiv.innerText = 'Login successful! Redirecting...';
+            .then(async response => {
+                const data = await response.json();
 
-                    setTimeout(() => {
-                        window.location.href = "/dashboard";
-                    }, 1000);
-                } else {
-                    resultDiv.className = 'mt-3 text-center text-danger';
-                    resultDiv.innerText = 'Login failed. Check your email or password.';
+                if (!response.ok) {
+                    throw data;
                 }
+
+                return data;
+            })
+            .then(data => {
+                localStorage.setItem('token', data.token);
+
+                resultDiv.className = 'mt-3 text-center text-success';
+                resultDiv.innerText = 'Login successful! Redirecting...';
+
+                setTimeout(() => {
+                    window.location.href = "/dashboard";
+                }, 1000);
             })
             .catch(error => {
-                console.error(error);
                 resultDiv.className = 'mt-3 text-center text-danger';
-                resultDiv.innerText = 'An error occurred. Try again later.';
+                resultDiv.innerText = error.message ?? 'Login failed';
             });
+
     });
 </script>
 </body>
