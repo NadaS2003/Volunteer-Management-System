@@ -1,32 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
 </p>
 
-# Volunteer Management System
+<h1 align="center">Volunteer Management System</h1>
 
-A web-based Volunteer Management System built using Laravel 10 (REST API), MySQL, and modern frontend technologies including HTML, CSS, JavaScript (Fetch/Axios), and SweetAlert2. The system allows administrators to efficiently manage volunteer data, including registration, editing, and deletion of volunteer records. It uses token-based (Bearer Token) authentication for secure access.
+<p align="center">
+A Volunteer Management System developed using Laravel 10 (REST API) and MySQL.  
+The system is designed as a centralized platform that allows administrators to manage volunteers, track activities, and organize volunteer data efficiently through a modern and responsive dashboard interface.
 
-## Features
+The application uses a clean RESTful API architecture and a professional admin interface built with AdminKit – Bootstrap Admin Template.
+</p>
 
-- Volunteer registration, update, and deletion
-- Validation and error handling with user-friendly messages
-- RESTful API backend built with Laravel 10
-- Secure authentication using Bearer Tokens
-- Responsive and interactive UI using AdminKit - Bootstrap Admin Template ©
-- Alerts using SweetAlert2
-- AJAX-based data submission using Fetch and Axios
+---
 
-## Technologies Used
+## 📌 Project Overview
 
-- **Backend:** Laravel 10, PHP, MySQL
-- **Frontend:** HTML, CSS, JavaScript, Fetch API, Axios, SweetAlert2
-- **UI Template:** AdminKit - Bootstrap Admin Template ©
+Managing volunteers manually can be inefficient and difficult to track.  
+This system provides a centralized platform where administrators can manage volunteer information, organize records, and monitor activities through an easy-to-use dashboard.
 
-## License
+The project demonstrates REST API development using Laravel and integration with a modern admin dashboard.
 
-This project uses the AdminKit - Bootstrap Admin Template © for the dashboard UI. Please refer to its license for details.
+---
+
+## 🚀 Key Features
+
+- RESTful API built with Laravel
+- Admin dashboard for centralized system management
+- Volunteer management (Create, Read, Update, Delete)
+- Organized database structure for volunteer data
+- Secure authentication system
+- Responsive admin interface
+- Clean API structure for scalability
+
+---
+
+## 🛠️ Tech Stack
+
+- PHP
+- Laravel 10 (REST API)
+- MySQL
+- Bootstrap
+- AdminKit Dashboard Template
+- JavaScript
+- HTML5
+- CSS3
+
+---
+
+## 📷 Screenshots
+
+<img width="1921" height="1350" alt="1" src="https://github.com/user-attachments/assets/9518fbad-6ed3-4cde-b4e5-8e5492e0780f" />
+
+<img width="1921" height="920" alt="2" src="https://github.com/user-attachments/assets/5d518215-c67c-4153-af85-631eb60f1545" />
+
+<img width="1921" height="920" alt="3" src="https://github.com/user-attachments/assets/c5cce6ab-a252-46f6-a1b8-9562028e4dd2" />
+
+<img width="1921" height="920" alt="4" src="https://github.com/user-attachments/assets/2d7c3092-da72-4e15-90bf-d665946240fb" />
+
+<img width="1921" height="920" alt="5" src="https://github.com/user-attachments/assets/655c1415-6609-4f54-a2d9-409c6c271c5f" />
+
+<img width="1921" height="920" alt="6" src="https://github.com/user-attachments/assets/b99ee25f-fe71-4d60-b412-d70e160c3cb6" />
+
+<img width="1921" height="920" alt="7" src="https://github.com/user-attachments/assets/d037a838-65e6-44eb-80f8-3d00bf79e894" />
+
+<img width="1921" height="920" alt="8" src="https://github.com/user-attachments/assets/c30a7911-7094-4d58-800d-8effadfaa43a" />
+
+<img width="1921" height="920" alt="9" src="https://github.com/user-attachments/assets/9a384c47-da0c-4655-a71a-52ca2a1d6039" />
