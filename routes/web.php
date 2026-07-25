@@ -32,19 +32,14 @@ Route::resource('/assignments',AssignmentController::class);
 
 Route::get('/run-migrations-secret-path-123', function () {
     try {
-        // تشغيل الـ Migrations
         Artisan::call('migrate', ['--force' => true]);
-        $migrationOutput = Artisan::output();
 
-        // تشغيل الـ Seeders (إذا أردت)
-        Artisan::call('db:seed', ['--force' => true]);
-        $seedOutput = Artisan::output();
+        // أضيفي هذا السطر لتوليد مفاتيح Passport على السيرفر
+        Artisan::call('passport:install', ['--force' => true]);
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Migrations and Seeders executed successfully!',
-            'migration_output' => $migrationOutput,
-            'seed_output' => $seedOutput,
+            'message' => 'Migrations and Passport keys generated successfully!',
         ]);
     } catch (\Exception $e) {
         return response()->json([
