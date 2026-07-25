@@ -40,7 +40,7 @@
             const email = document.querySelector('[name=email]').value;
             const phone = document.querySelector('[name=phone]').value;
 
-            fetch('http://localhost:8000/api/volunteers', {
+            fetch('/api/volunteers', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

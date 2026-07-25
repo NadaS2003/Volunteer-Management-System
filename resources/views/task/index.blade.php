@@ -39,7 +39,7 @@
         const token = localStorage.getItem('token');
 
         function loadTasks(page = 1) {
-            axios.get(`http://localhost:8000/api/tasks?page=${page}`, {
+            axios.get(`/api/tasks?page=${page}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -149,7 +149,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:8000/api/tasks/${id}`, {
+                    fetch(`/api/tasks/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `Bearer ${token}`,

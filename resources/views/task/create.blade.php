@@ -32,7 +32,7 @@
             const name = document.querySelector('[name=name]').value;
             const description = document.querySelector('[name=description]').value;
 
-            fetch('http://localhost:8000/api/tasks', {
+            fetch('/api/tasks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

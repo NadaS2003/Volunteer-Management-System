@@ -38,7 +38,7 @@
         const token = localStorage.getItem('token');
 
 
-        axios.get(`http://localhost:8000/api/volunteers/${id}`, {
+        axios.get(`/api/volunteers/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -72,7 +72,7 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
 
-            axios.put(`http://localhost:8000/api/volunteers/${id}`, {
+            axios.put(`/api/volunteers/${id}`, {
                 first_name: first_name,
                 last_name: last_name,
                 email: email,

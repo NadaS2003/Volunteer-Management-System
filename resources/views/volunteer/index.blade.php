@@ -40,7 +40,7 @@
         const token = localStorage.getItem('token');
 
         function loadVolunteers(page = 1) {
-            axios.get(`http://localhost:8000/api/volunteers?page=${page}`, {
+            axios.get(`/api/volunteers?page=${page}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -142,7 +142,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:8000/api/volunteers/${id}`, {
+                    fetch(`/api/volunteers/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `Bearer ${token}`,

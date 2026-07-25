@@ -49,7 +49,7 @@
         });
 
         function loadVolunteers() {
-            axios.get('http://localhost:8000/api/volunteers', {
+            axios.get('/api/volunteers', {
                 headers: { Authorization: `Bearer ${token}` }
             })
                 .then(response => {
@@ -68,7 +68,7 @@
 
 
         function loadPlaces() {
-            axios.get('http://localhost:8000/api/places', {
+            axios.get('/api/places', {
                 headers: { Authorization: `Bearer ${token}` }
             })
                 .then(response => {
@@ -93,7 +93,7 @@
 
 
         function loadTasks() {
-            axios.get('http://localhost:8000/api/tasks', {
+            axios.get('/api/tasks', {
                 headers: { Authorization: `Bearer ${token}` }
             })
                 .then(response => {
@@ -129,7 +129,7 @@
             const place_id = document.getElementById('place-select').value;
             const task_id = document.getElementById('task-select').value;
 
-            fetch('http://localhost:8000/api/assignments', {
+            fetch('/api/assignments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

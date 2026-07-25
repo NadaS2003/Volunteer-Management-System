@@ -39,7 +39,7 @@
         const token = localStorage.getItem('token');
 
         function loadAssignments(page = 1) {
-            axios.get(`http://localhost:8000/api/assignments?page=${page}`, {
+            axios.get(`/api/assignments?page=${page}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

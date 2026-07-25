@@ -43,7 +43,7 @@
         const token = localStorage.getItem('token');
 
         function loadPlaces(page = 1) {
-            axios.get(`http://localhost:8000/api/places?page=${page}`, {
+            axios.get(`/api/places?page=${page}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -152,7 +152,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:8000/api/places/${id}`, {
+                    fetch(`/api/places/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': `Bearer ${token}`,

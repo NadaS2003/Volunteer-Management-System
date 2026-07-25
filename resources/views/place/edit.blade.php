@@ -31,7 +31,7 @@
         const token = localStorage.getItem('token');
 
 
-        axios.get(`http://localhost:8000/api/places/${id}`, {
+        axios.get(`/api/places/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -61,7 +61,7 @@
             const name = document.getElementById('name').value;
             const location = document.getElementById('location').value;
 
-            axios.put(`http://localhost:8000/api/places/${id}`, {
+            axios.put(`/api/places/${id}`, {
                 name: name,
                 location: location
             }, {
