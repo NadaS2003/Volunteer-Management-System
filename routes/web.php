@@ -29,17 +29,21 @@ Route::resource('/places', PlaceController::class);
 Route::resource('/tasks', TaskController::class);
 Route::resource('/volunteers', VolunteerController::class);
 Route::resource('/assignments',AssignmentController::class);
-
 Route::get('/run-migrations-secret-path-123', function () {
     try {
+        // تحديث الـ autolander والتعرف على الحزم الجديدة
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+
+        // تنفيذ المايجريشن
         Artisan::call('migrate', ['--force' => true]);
 
-        // أضيفي هذا السطر لتوليد مفاتيح Passport على السيرفر
+        // تثبيت مفاتيح Passport المفقودة على السيرفر
         Artisan::call('passport:install', ['--force' => true]);
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Migrations and Passport keys generated successfully!',
+            'message' => 'Migrations and Passport installed successfully!',
         ]);
     } catch (\Exception $e) {
         return response()->json([
