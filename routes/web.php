@@ -30,30 +30,22 @@ Route::resource('/tasks', TaskController::class);
 Route::resource('/volunteers', VolunteerController::class);
 Route::resource('/assignments',AssignmentController::class);
 
-
-Route::get('/run-migrations-secret-path-123', function () {
+Route::get('/create-passport-client-999', function () {
     try {
-        // مسح الكاش وإعادة تحديث الـ Autoload
-        Artisan::call('config:clear');
-        Artisan::call('cache:clear');
-        Artisan::call('route:clear');
+        // التحقق إن لم يكن العميل موجوداً مسبقاً لعدم تكراره
+        if (Client::where('personal_access_client', 1)->exists()) {
+            return "Personal Access Client already exists!";
+        }
 
-        // تشغيل المايجريشن
-        Artisan::call('migrate', ['--force' => true]);
-
-        // إنشاء مفاتيح Passport برمجياً لضمان عدم فشل الأمر
-        app(ClientRepository::class)->createPersonalAccessClient(
-            null, 'Personal Access Client', config('app.url')
+        // إنشاء العميل المطلوب لـ Passport برمجياً
+        app(\Laravel\Passport\ClientRepository::class)->createPersonalAccessClient(
+            null,
+            'Personal Access Client',
+            config('app.url')
         );
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Migrations and Passport Client generated successfully!',
-        ]);
+        return "Personal Access Client created successfully! You can now log in.";
     } catch (\Exception $e) {
-        return response()->json([
-            'status' => 'error',
-            'message' => $e->getMessage(),
-        ], 500);
+        return "Error: " . $e->getMessage();
     }
 });
