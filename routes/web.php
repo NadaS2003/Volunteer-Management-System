@@ -29,21 +29,26 @@ Route::resource('/places', PlaceController::class);
 Route::resource('/tasks', TaskController::class);
 Route::resource('/volunteers', VolunteerController::class);
 Route::resource('/assignments',AssignmentController::class);
+
+
 Route::get('/run-migrations-secret-path-123', function () {
     try {
-        // تحديث الـ autolander والتعرف على الحزم الجديدة
+        // مسح الكاش وإعادة تحديث الـ Autoload
         Artisan::call('config:clear');
         Artisan::call('cache:clear');
+        Artisan::call('route:clear');
 
-        // تنفيذ المايجريشن
+        // تشغيل المايجريشن
         Artisan::call('migrate', ['--force' => true]);
 
-        // تثبيت مفاتيح Passport المفقودة على السيرفر
-        Artisan::call('passport:install', ['--force' => true]);
+        // إنشاء مفاتيح Passport برمجياً لضمان عدم فشل الأمر
+        app(ClientRepository::class)->createPersonalAccessClient(
+            null, 'Personal Access Client', config('app.url')
+        );
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Migrations and Passport installed successfully!',
+            'message' => 'Migrations and Passport Client generated successfully!',
         ]);
     } catch (\Exception $e) {
         return response()->json([
