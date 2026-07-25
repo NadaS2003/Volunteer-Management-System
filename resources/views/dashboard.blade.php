@@ -140,7 +140,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            axios.get('http://localhost:8000/api/dashboard', {
+            axios.get('/api/dashboard', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
